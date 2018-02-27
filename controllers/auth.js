@@ -12,7 +12,13 @@ router.post('/signup', function(req, res) {
     where: { email: req.body.email },
     defaults: {
       name: req.body.name,
-      password: req.body.password
+      password: req.body.password,
+      address: req.body.address,
+      address2: req.body.address2,
+      city: req.body.city,
+      state: req.body.state,
+      zipcode: req.body.zipcode,
+      party: req.body.party
     }
   }).spread(function(user, created) {
     if (created) {

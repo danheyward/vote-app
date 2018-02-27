@@ -1,6 +1,7 @@
 require('dotenv').config();
 var flash = require('connect-flash');
 var express = require('express');
+var request = require('request');
 var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var session = require('express-session');
@@ -42,6 +43,7 @@ app.get('/profile', isLoggedIn, function(req, res) {
 });
 
 app.use('/auth', require('./controllers/auth'));
+app.use('/test', require('./controllers/test')); // Test Controller for API
 
 var server = app.listen(process.env.PORT || 3000);
 

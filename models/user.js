@@ -29,6 +29,54 @@ module.exports = (sequelize, DataTypes) => {
           msg: 'Password must be at least 8 characters.'
         }
       }
+    },
+    address: {
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [8,99],
+          msg: 'Invalid address name.'
+        }
+      }
+    },
+    address2: {
+      type: DataTypes.STRING,
+    },
+    city: {
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [1,50],
+          msg: 'Invalid city name.'
+        }
+      }
+    },
+    state: {
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [2,2],
+          msg: 'Please select your state.'
+        }
+      }
+    },
+    zipcode: {
+      type: DataTypes.INTEGER,
+      validate: {
+        len: {
+          args: [5,5],
+          msg: 'Please input a valid zipcode.'
+        }
+      }
+    },
+    party: {
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [1,50],
+          msg: 'Please select an option.'
+        }
+      }
     }
   }, {
     hooks: {
@@ -43,7 +91,7 @@ module.exports = (sequelize, DataTypes) => {
   user.associate = function(models) {
     // associations can be defined here
   };
-  user.prototype.validPassword = function(passwordTyped) {
+  user.prototype.validPassword = function (passwordTyped) {
     return bcrypt.compareSync(passwordTyped, this.password);
   };
 
@@ -51,6 +99,6 @@ module.exports = (sequelize, DataTypes) => {
     var userData = this.get();
     delete userData.password;
     return userData;
-  };
+  }
   return user;
 };

@@ -59,9 +59,22 @@ app.get('/profile', isLoggedIn, function(req, res) {
         }
       };
       request(options, function(error, response, body) {
-        var bills = JSON.parse(body);
-        // res.render('profile', { reps: reps, bills: bills.results });
-        res.send(bills);
+        var billsHouse = JSON.parse(body);
+        var options2 = {
+          url: 'https://api.propublica.org/congress/v1/bills/upcoming/senate',
+          headers: {
+            'X-API-Key': process.env.CONGRESS_KEY
+          }
+        };
+        request(options2, function(error, response, body) {
+          var billsSen = JSON.parse(body);
+          res.render('profile', {
+            reps: reps,
+            billsHouse: billsHouse.results[0].bills,
+            billsSen: billsSen.results[0].bills
+          });
+          // res.send(billsSen.results[0]);
+        })
       });
     });
   });

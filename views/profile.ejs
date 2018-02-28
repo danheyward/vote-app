@@ -13,3 +13,19 @@
   <div class='headshot' style="background-image:url('<%= reps.officials[4].photoUrl %>')"></div>
   <p><%= reps.officials[4].name %></p>
 </div>
+
+<h2>Upcoming Referendums</h2>
+
+<% for (var i = 0; i < 10; i++) { %>
+  <% if (billsHouse !== undefined) {%>
+  <h4><%= billsHouse[i].bill_number %></h4>
+  <p><%= billsHouse[i].description %></p>
+  <% } %>
+<% }; %>
+
+<% for (var i = 0; i < 10; i++) { %>
+  <% if (billsSen !== undefined) {%>
+  <h4><%= billsSen[i].bill_number %></h4>
+  <p><%= billsSen[i].description %></p>
+  <% } %>
+<% }; %>

@@ -4,6 +4,7 @@ var express = require('express');
 var request = require('request');
 var db = require('./models');
 var path = require('path');
+var async = require('async');
 var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var session = require('express-session');
@@ -50,12 +51,22 @@ app.get('/profile', isLoggedIn, function(req, res) {
       address.dataValues.city + '%20' + address.dataValues.state + '&';
 
     request(url, function(error, response, body) {
-      console.log(url);
       var reps = JSON.parse(body);
-      res.render('profile', { reps: reps });
+      var options = {
+        url: 'https://api.propublica.org/congress/v1/bills/upcoming/house',
+        headers: {
+          'X-API-Key': process.env.CONGRESS_KEY
+        }
+      };
+      request(options, function(error, response, body) {
+        var bills = JSON.parse(body);
+        // res.render('profile', { reps: reps, bills: bills.results });
+        res.send(bills);
+      });
     });
   });
 });
+
 
 app.use('/auth', require('./controllers/auth'));
 app.use('/test', require('./controllers/test')); // Test Controller for API

@@ -2,6 +2,8 @@ require('dotenv').config();
 var flash = require('connect-flash');
 var express = require('express');
 var request = require('request');
+var db = require('./models');
+var path = require('path');
 var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var session = require('express-session');
@@ -15,6 +17,7 @@ app.set('view engine', 'ejs');
 app.use(require('morgan')('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
   secret: process.env.SESSION_SECRET,
@@ -39,7 +42,19 @@ app.get('/', function(req, res) {
 });
 
 app.get('/profile', isLoggedIn, function(req, res) {
-  res.render('profile');
+  db.user.findOne({
+    where: { email: req.user.email }
+  }).then(function(address) {
+    var url = 'https://www.googleapis.com/civicinfo/v2/representatives?key='
+      + process.env.GOOGLE_KEY + '&address=' + address.dataValues.address + '%20' +
+      address.dataValues.city + '%20' + address.dataValues.state + '&';
+
+    request(url, function(error, response, body) {
+      console.log(url);
+      var reps = JSON.parse(body);
+      res.render('profile', { reps: reps });
+    });
+  });
 });
 
 app.use('/auth', require('./controllers/auth'));

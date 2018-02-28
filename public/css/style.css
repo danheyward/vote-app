@@ -1,0 +1,35 @@
+body {
+  text-align: center;
+}
+
+.navbar {
+  height: 100px;
+  background-color: blue;
+}
+
+.navbar h2 {
+  display: inline-block;;
+  color: white;
+  font-family: 'Dancing Script', cursive;
+}
+
+.navbar a {
+  padding: 0 10px;
+  color: white;
+}
+
+.headshot {
+  height: 15vw;
+  width: 15vw;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+  background-attachment: scroll;
+  background-size: 15vw;
+}
+
+.headshot-wrapper {
+  display: inline-block;
+  padding: 1%;
+  margin: 1%;
+  text-align: center;
+}

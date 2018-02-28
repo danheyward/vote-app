@@ -1,46 +1,42 @@
 <div class='row'>
   <form action='/auth/signup' method='POST' class='col s12'>
       <div class='row'>
-        <div class='input-field col s6'>
-          <i class='material-icons prefix'>account_circle</i>
+        <div class='input-field'>
           <input id='name' class='validate' type='text' name='name'>
           <label for='name'>Name</label>
         </div>
 
-        <div class='input-field col s6'>
-          <i class='material-icons prefix'>email</i>
+        <div class='input-field'>
           <input id='email' class='validate' type='email' name='email'>
           <label for='email'>Email</label>
         </div>
 
-        <div class='input-field col s6'>
-          <i class='material-icons prefix'>lock</i>
+        <div class='input-field'>
           <input id='password' class='validate' type='password' name='password'>
           <label for='password'>Password</label>
         </div>
       </div>
 
       <div class='row'>
-        <div class='input-field col s6'>
-          <i class='material-icons prefix'>location_on</i>
+        <div class='input-field'>
           <input id='address' class='validate' type='text' name='address'>
           <label for='address'>Address</label>
         </div>
       </div>
 
       <div class='row'>
-        <div class='input-field col s6'>
+        <div class='input-field'>
           <input id='address2' class='validate' type='text' name='address2'>
           <label for='address2'>Address 2</label>
         </div>
 
-        <div class='input-field col s6'>
+        <div class='input-field'>
           <input id='city' class='validate' type='text' name='city'>
           <label for='city'>City</label>
         </div>
 
-        <div class='input-field col s6'>
-          <select>
+        <div class='input-field'>
+          <select id='state' name='state'>
             <option value='' disabled selected>Your State</option>
             <option value='AL'>AL</option><option value='AK'>AK</option><option value='AZ'>AZ</option><option value='AR'>AR</option>
             <option value='CA'>CA</option><option value='CO'>CO</option><option value='CT'>CT</option><option value='DE'>DE</option>
@@ -59,14 +55,14 @@
           <label for='state'>State</label>
         </div>
 
-        <div class='input-field col s6'>
+        <div class='input-field'>
           <input id='zipcode' class='validate' type='text' name='zipcode' placeholder='12345'>
           <label for='zipcode'>Zipcode</label>
         </div>
       </div>
 
   <div class='row'>
-    <select>
+    <select id='party' name='party'>
       <option value='' disabled selected>Select your party</option>
       <option value='Democrat'>Democrat</option>
       <option value='Republican'>Republican</option>

@@ -1,4 +1,5 @@
 
+<div>
 <div class='headshot-wrapper'>
   <div class='headshot' style="background-image:url('<%= reps.officials[2].photoUrl %>')"></div>
   <p><%= reps.officials[2].name %></p>
@@ -13,19 +14,26 @@
   <div class='headshot' style="background-image:url('<%= reps.officials[4].photoUrl %>')"></div>
   <p><%= reps.officials[4].name %></p>
 </div>
+</div>
 
-<h2>Upcoming Referendums</h2>
+<div class='left bill-container'>
+<h4>Upcoming Senate Bills</h4>
+<% if (billsSen !== undefined) { %>
+  <% for (var i = 0; i < 10; i++) { %>
+  <p><%= billsSen[i].bill_number %></p>
+  <p><%= billsSen[i].description %></p>
+  <% } %>
+<% } else { %>
+    <h6>NO BILLS ON DECK</h6>
+  <% }; %>
+</div>
 
+<div class='right bill-container'>
+<h4>Upcoming House Bills</h4>
 <% for (var i = 0; i < 10; i++) { %>
   <% if (billsHouse !== undefined) {%>
-  <h4><%= billsHouse[i].bill_number %></h4>
+  <p><%= billsHouse[i].bill_number %></p>
   <p><%= billsHouse[i].description %></p>
   <% } %>
 <% }; %>
-
-<% for (var i = 0; i < 10; i++) { %>
-  <% if (billsSen !== undefined) {%>
-  <h4><%= billsSen[i].bill_number %></h4>
-  <p><%= billsSen[i].description %></p>
-  <% } %>
-<% }; %>
+</div>

@@ -73,8 +73,7 @@ app.get('/profile', isLoggedIn, function(req, res) {
             billsHouse: billsHouse.results[0].bills,
             billsSen: billsSen.results[0].bills
           });
-          // res.send(billsSen.results[0]);
-        })
+        });
       });
     });
   });

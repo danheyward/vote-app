@@ -1,16 +1,15 @@
 body {
   margin: 0px;
   padding: 0px;
+  color: blue;
 }
 
 .navbar {
   height: 100px;
-  background-color: blue;
 }
 
 .navbar h1 {
   display: inline-block;;
-  color: white;
   font-family: 'Dancing Script', cursive;
   text-align: left;
   margin: 30px 30px;
@@ -18,8 +17,8 @@ body {
 
 .navbar a {
   padding: 0 10px;
-  color: white;
   text-align: right;
+  color: blue;
 }
 
 .navbar-title {

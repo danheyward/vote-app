@@ -23,19 +23,16 @@ router.post('/signup', function(req, res) {
   }).spread(function(user, created) {
     if (created) {
       // User was created
-      console.log('User created');
       passport.authenticate('local', {
         successRedirect: '/',
         successFlash: 'Account created and logged in.'
       })(req, res);
     } else {
       // Email already exists in db
-      console.log('email already exists');
       req.flash('error', 'Email already exists.');
       res.redirect('/auth/signup');
     }
   }).catch(function(error) {
-    console.log('An error occurred: ', error.message);
     req.flash('error', error.message);
     res.redirect('/auth/signup');
   });
@@ -54,7 +51,6 @@ router.post('/login', passport.authenticate('local', {
 
 router.get('/logout', function(req, res) {
   req.logout();
-  console.log('User is logged out');
   req.flash('success', 'You have logged out.');
   res.redirect('/');
 });

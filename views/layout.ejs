@@ -1,29 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Bots & Prayers</title>
 
     <!-- Latest compiled and minified CSS & JS -->
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link rel='stylesheet' href='/css/style.css'>
+    <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet'>
   </head>
   <body>
-    <div class="navbar">
-      <a href="/auth/signup">Signup</a>
-      <a href="/auth/login">Login</a>
-      <h2>Bots & Prayers</h2>
-      <a href="/auth/logout">Logout</a>
-      <a href="/profile">Profile</a>
+    <div class='navbar'>
+      <div class='navbar-title'>
+        <h1>Bots & Prayers</h1>
+      </div>
+      <div class='navbar-links'>
+        <a href='/auth/signup'>Signup</a>
+        <a href='/auth/login'>Login</a>
+        <a href='/auth/logout'>Logout</a>
+        <a href='/profile'>Profile</a>
+      </div>
     </div>
     <div>
       <% include partials/alerts %>
       <%- body %>
     </div>
 
-    <script src="https://apis.google.com/js/client.js?onload=load"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="/js/app.js"></script>
+    <script src='https://apis.google.com/js/client.js?onload=load'></script>
+    <script type='text/javascript' src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+    <script type='text/javascript' src='/js/app.js'></script>
   </body>
 </html>

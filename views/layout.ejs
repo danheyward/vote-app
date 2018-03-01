@@ -3,25 +3,27 @@
   <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Bots & Prayers</title>
+    <title>slactivism</title>
 
     <!-- Latest compiled and minified CSS & JS -->
     <link rel='stylesheet' href='/css/style.css'>
-    <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="/img/sloth.png">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dynatable/0.3.1/jquery.dynatable.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
     <div class='navbar'>
       <div class='navbar-title'>
-        <h1>Bots & Prayers</h1>
+        <h1 class='blue-text'>slacktivism</h1>
       </div>
       <div class='navbar-links'>
-        <a href='/auth/signup'>Signup</a>
-        <a href='/auth/login'>Login</a>
-        <a href='/auth/logout'>Logout</a>
-        <a href='/profile'>Profile</a>
+        <a class='orange-text' href='/auth/signup'>signup</a>
+        <a class='orange-text' href='/auth/login'>login</a>
+        <a class='orange-text' href='/auth/logout'>logout</a>
+        <a class='orange-text' href='/profile'>profile</a>
+        <a class='orange-text' href='/profile/ballot'>my ballot</a>
       </div>
     </div>
     <div>
@@ -29,10 +31,9 @@
       <%- body %>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type='text/javascript' src='/js/app.js'></script>
     <script type='text/javascript' src='https://apis.google.com/js/client.js?onload=load'></script>
     <script type='text/javascript' src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/Dynatable/0.3.1/jquery.dynatable.min.js'</script>
-    <script type='text/javascript' src='/js/app.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   </body>
 </html>

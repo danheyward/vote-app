@@ -1,0 +1,145 @@
+
+
+<div class="carousel carousel-slider center" data-indicators="true">
+  <div class="carousel-item blue white-text" href="#one!">
+    <h2>This is <span style='text-decoration:underline'>YOUR</span> Senator!</h2>
+    <div class='headshot-wrapper'>
+      <div class='repheadshot' style="background-image:url('<%= reps.officials[2].photoUrl %>')"></div>
+    </div>
+    <div class='repinfo'>
+      <ul>
+        <li class='name'><%= reps.officials[2].name %></li>
+        <li class='party'><%= reps.officials[2].party %></li>
+        <li class='phone'><%= reps.officials[2].phones %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="carousel-item blue white-text" href="#one!">
+    <h2>This is <span style='text-decoration:underline'>YOUR</span> Senator!</h2>
+    <div class='headshot-wrapper'>
+      <div class='repheadshot' style="background-image:url('<%= reps.officials[3].photoUrl %>')"></div>
+    </div>
+    <div class='repinfo'>
+      <ul>
+        <li class='name'><%= reps.officials[3].name %></li>
+        <li class='party'><%= reps.officials[3].party %></li>
+        <li class='phone'><%= reps.officials[3].phones %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="carousel-item blue white-text" href="#one!">
+    <h2>This is <span style='text-decoration:underline'>YOUR</span> Representative!</h2>
+    <div class='headshot-wrapper'>
+      <div class='repheadshot' style="background-image:url('<%= reps.officials[4].photoUrl %>')"></div>
+    </div>
+    <div class='repinfo'>
+      <ul>
+        <li class='name'><%= reps.officials[4].name %></li>
+        <li class='party'><%= reps.officials[4].party %></li>
+        <li class='phone'><%= reps.officials[4].phones %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class='left bill-container'>
+  <h4 class='blue-text'>Upcoming Senate Bills</h4>
+  <div class='left bill-scroller'>
+  <% if (billsSen !== undefined) { %>
+    <% for (var i = 0; i < 10; i++) { %>
+      <div class='repcard'>
+        <div class="col s12 m6 l6">
+          <div class="card white darken-1">
+            <div class="card-content blue-text">
+              <a href="<%= billsSen[i].bill_url %>" target='_blank'><i class='medium material-icons prefix'>work</i></a>
+              <span class="card-title"><%= billsSen[i].bill_number %></span>
+              <p><%= billsSen[i].description %></p>
+            </div>
+            <div class="card-action">
+              <a class='vote' href="/profile/ballot/yes" data-bill_number='<%= billsSen[i].bill_number %>'
+                  data-description='<%= billsSen[i].description %>' data-vote='yes' data-rep1='<%= reps.officials[2].name %>'
+                  data-rep2='<%= reps.officials[3].name %>' data-rep3='null'>
+                  <i class='material-icons'>thumb_up</i>
+              </a>
+              <a class='vote' href="/profile/ballot/no" data-bill_number='<%= billsHouse[i].bill_number %>'
+                  data-description='<%= billsHouse[i].description %>' data-vote='no' data-rep1='<%= reps.officials[2].name %>'
+                  data-rep2='<%= reps.officials[3].name %>' data-rep3='null'>
+                  <i class='material-icons'>thumb_down</i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  <% } else { %>
+    <div class='norep'>
+      <div class="col s12 m6 l6">
+        <div class="card white darken-1">
+          <div class="card-content blue-text">
+            <a href="https://www.congress.gov/search?q=%7B%22source%22%3A%22legislation%22%7D" target='_blank'>
+              <i class='medium material-icons prefix'>error</i>
+            </a>
+            <span class="card-title">None found!</span>
+            <p>Check back later for an updated list, or check the Congressional calendar below.</p>
+          </div>
+          <div class="card-action">
+            <a href="https://www.congress.gov/search?q=%7B%22source%22%3A%22legislation%22%7D" target='_blank'>Check the Calendar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }; %>
+  </div>
+</div>
+
+<div class='right bill-container'>
+<h4 class='blue-text'>Upcoming House Bills</h4>
+  <div class='bill-scroller'>
+  <% if (billsHouse !== undefined) {%>
+    <% for (var i = 0; i < 10; i++) { %>
+      <div class='repcard'>
+        <div class="col s12 m6 l6">
+          <div class="card white darken-1">
+            <div class="card-content blue-text">
+              <a href="<%= billsHouse[i].bill_url %>" target='_blank'><i class='medium material-icons prefix'>work</i></a>
+              <span class="card-title"><%= billsHouse[i].bill_number %></span>
+              <p><%= billsHouse[i].description %></p>
+            </div>
+            <div class="card-action">
+              <a class='vote' href="/profile/ballot/yes" data-bill_number='<%= billsHouse[i].bill_number %>'
+                  data-description='<%= billsHouse[i].description %>' data-vote='yes' data-rep1='null' data-rep2='null'
+                  data-rep3='<%= reps.officials[4].name %>'>
+                  <i class='material-icons'>thumb_up</i>
+              </a>
+              <a class='vote' href="/profile/ballot/no" data-bill_number='<%= billsHouse[i].bill_number %>'
+                  data-description='<%= billsHouse[i].description %>' data-vote='no' data-rep1='null' data-rep2='null'
+                  data-rep3='<%= reps.officials[4].name %>'>
+                  <i class='material-icons'>thumb_down</i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  <% } else { %>}
+    <div class='norep'>
+      <div class="col s12 m6 l6">
+        <div class="card white darken-1">
+          <div class="card-content blue-text">
+            <a href="https://www.congress.gov/search?q=%7B%22source%22%3A%22legislation%22%7D" target='_blank'>
+              <i class='medium material-icons prefix'>error</i>
+            </a>
+            <span class="card-title">None found!</span>
+            <p>Check back later for an updated list, or check the Congressional calendar below.</p>
+          </div>
+          <div class="card-action">
+            <a href="https://www.congress.gov/search?q=%7B%22source%22%3A%22legislation%22%7D" target='_blank'>Check the Calendar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }; %>
+  </div>
+</div>
+<script type='text/javascript' src='/js/app.js'></script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-3.2.1.min.js'></script>

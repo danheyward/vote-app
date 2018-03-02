@@ -52,7 +52,7 @@
           <small class='white-text block'>Shared My Voice</small>
         </div>
         <div class='inline centered'>
-          <a href='/profile/ballot/<%= ballot.id %>' class='delete-ballot'
+          <a href='/profile/ballots/<%= ballot.id %>' class='edit-ballot'
             <% if (ballot.vote === 'yes') { %>
               name='no'
             <% } else { %>

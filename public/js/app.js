@@ -26,7 +26,7 @@ $(document).ready(function() {
     });
   });
 
-  $(.delete-ballot).click(function(e) {
+  $('.edit-ballot').click(function(e) {
     e.preventDefault();
     $.ajax({
       url: $(this).attr('href'),

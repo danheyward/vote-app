@@ -48,19 +48,21 @@ router.get('/ballot', isLoggedIn, function(req, res) {
 });
 
 router.post('/', isLoggedIn, function(req, res) {
-  console.log('hit the post, shitttt');
-  db.ballot.create({
-    title: req.body.title,
-    url: req.body.url,
-    vote: req.body.vote,
-    sen1: req.body.sen1,
-    sen1phone: req.body.sen1phone,
-    sen2: req.body.sen2,
-    sen2phone: req.body.sen2phone,
-    rep: req.body.rep,
-    repphone: req.body.repphone,
-    userId: req.user.id
-  }).then(function(ballot) {
+  db.ballot.findOrCreate({
+    where: { url: req.body.url },
+    defaults: {
+      title: req.body.title,
+      url: req.body.url,
+      vote: req.body.vote,
+      sen1: req.body.sen1,
+      sen1phone: req.body.sen1phone,
+      sen2: req.body.sen2,
+      sen2phone: req.body.sen2phone,
+      rep: req.body.rep,
+      repphone: req.body.repphone,
+      userId: req.user.id
+    }
+  }).spread(function(ballot, wasCreated) {
     res.redirect('/profile/ballot');
   }).catch(function(error) {
     console.log(error);

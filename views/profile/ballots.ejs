@@ -48,11 +48,11 @@
         </span><br/><br/>
         <hr>
         <div class='inline centered'>
-          <a href='#'><i class="material-icons white-text medium block action">clear</i></a>
+          <a href='/profile/ballots/<%= ballot.id %>' class='delete-ballot'><i class="material-icons white-text medium block action">clear</i></a>
           <small class='white-text block'>Shared My Voice</small>
         </div>
         <div class='inline centered'>
-          <a href='/profile/ballots/<%= ballot.id %>' class='edit-ballot'
+          <a href='/profile/ballots/<%= ballot.id %>/edit' class='edit-ballot'
             <% if (ballot.vote === 'yes') { %>
               name='no'
             <% } else { %>

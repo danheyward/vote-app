@@ -36,7 +36,17 @@ $(document).ready(function() {
       }
     }).done(function(data) {
       window.location.href = '/profile/ballots'
-    })
-  })
+    });
+  });
+
+  $('.delete-ballot').click(function(e) {
+    e.preventDefault();
+    $.ajax({
+      url: $(this).attr('href'),
+      type: 'DELETE',
+    }).done(function(data) {
+      window.location.href = '/profile/ballots'
+    });
+  });
 
 });

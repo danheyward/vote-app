@@ -76,13 +76,21 @@ router.get('/ballots', isLoggedIn, function(req, res) {
   });
 });
 
-router.put('/ballots/:id', function(req, res) {
+router.put('/ballots/:id/edit', function(req, res) {
   db.ballot.update(
     { vote: req.body.vote },
     { where: { id: req.params.id }}
   ).then(function(ballot) {
     res.send('success');
-  })
-})
+  });
+});
+
+router.delete('/ballots/:id', function(req, res) {
+  db.ballot.destroy({
+    where: { id: req.params.id }
+  }).then(function(deletedBallot) {
+    res.send('bye bye');
+  });
+});
 
 module.exports = router;

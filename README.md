@@ -1,6 +1,6 @@
-# Express Authentication
+# slacktivism
 
-Express authentication template using Passport + flash messages + custom middleware
+Test test test
 
 ## Getting Started
 

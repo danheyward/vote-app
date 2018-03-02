@@ -29,6 +29,24 @@ body {
   display:inline-block;
 }
 
+.input-field input:focus + label {
+  color: #2196f3 !important;
+}
+
+.row .input-field input:focus {
+  border-bottom: 1px solid #2196f3 !important;
+  box-shadow: 0 1px 0 0 #2196f3 !important
+}
+
+.input-field input:focus {
+  border-bottom: 1px solid #2196f3 !important;
+  box-shadow: 0 1px 0 0 #2196f3 !important
+}
+
+ul.dropdown-content.select-dropdown li span {
+    color: #2196f3;
+}
+
 .repheadshot {
   display: inline-block;
   height: 200px;

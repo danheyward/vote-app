@@ -43,10 +43,6 @@ router.get('/', isLoggedIn, function(req, res) {
   });
 });
 
-router.get('/ballot', isLoggedIn, function(req, res) {
-  res.send('You did it, buddy!');
-});
-
 router.post('/', isLoggedIn, function(req, res) {
   db.ballot.findOrCreate({
     where: { url: req.body.url },
@@ -64,9 +60,19 @@ router.post('/', isLoggedIn, function(req, res) {
     }
   }).spread(function(ballot, wasCreated) {
     res.redirect('/profile/ballot');
-  }).catch(function(error) {
+  })
+  .catch(function(error) {
     console.log(error);
     res.redirect('/');
+  });
+});
+
+router.get('/ballot', isLoggedIn, function(req, res) {
+  db.ballot.findAll({
+    where: { userId: req.user.id },
+    include: [db.user]
+  }).then(function(ballot) {
+    res.render('profile/ballot', { ballot: ballot });
   });
 });
 

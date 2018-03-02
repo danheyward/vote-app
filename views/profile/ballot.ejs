@@ -1,0 +1,50 @@
+<main class=''>
+  <div class="row">
+  <% ballot.forEach(function(ballot) { %>
+    <div class="row">
+    <div class="col s12 m5">
+      <div class="card-panel blue">
+        <h4 class='white-text center-align'><%= ballot.title %></h4>
+        <div class='center-align'><small class='white-text'><%= ballot.url %></small></div><br/>
+        <hr>
+        <br>
+        <div class='center-align'><h5 class='white-text'>Your Script</h5>
+        <% if (ballot.sen1 !== 'null') { %>
+          <small class='white-text'>
+            Call Senator <%= ballot.sen1 %> at <%= ballot.sen1phone %>
+            or Senator <%= ballot.sen2 %> at <%= ballot.sen2phone %>
+          </small><br/><br/>
+          <% } else { %>
+          <small class='white-text'>
+            Call Representative <%= ballot.rep %> at <%= ballot.repphone %>
+          </small><br/><br/>
+        <% }; %>
+        </div>
+
+        <span class="white-text">
+          "Hello
+          <% if (ballot.sen1 !== 'null') { %>
+          Senator <%= ballot.sen1 %>/<%= ballot.sen2 %>,<br/><br/>
+          <% } else {%>
+          Representative <%= ballot.rep %>,<br/><br/>
+          <% }; %>
+          My name is <%= ballot.user.name %> and, as a consituent from
+          <%= ballot.user.city %>, I ask that you vote
+          <% if (ballot.vote === 'yes') { %>
+            in favor of
+            <% } else { %>
+              against
+            <% } %>
+          <%= ballot.title %>.<br/><br/>
+          Thank you for taking your time to hear my voice."
+        </span><br/><br/>
+        <hr>
+
+
+      </div>
+    </div>
+
+
+  <% }); %>
+  </div>
+</main>

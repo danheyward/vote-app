@@ -24,7 +24,7 @@ $(document).ready(function() {
       type: 'POST',
       data: data
     }).done(function(data) {
-      window.location.href = '/';
+      window.location.href = '/profile/ballot';
     });
   });
 

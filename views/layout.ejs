@@ -10,22 +10,31 @@
     <link rel="icon" type="image/png" href="/img/sloth.png">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dynatable/0.3.1/jquery.dynatable.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   </head>
   <body>
-    <div class='navbar'>
-      <div class='navbar-title'>
-        <h1 class='blue-text'>slacktivism</h1>
+    <div class='navbar-fixed'>
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a class='orange-text' href='/auth/signup'>signup</a></li>
+        <li class='divider'></li>
+        <li><a class='orange-text' href='/auth/login'>login</a></li>
+        <li class='divider'></li>
+        <li><a class='orange-text' href='/auth/logout'>logout</a></li>
+        <li class='divider'></li>
+        <li><a class='orange-text' href='/profile'>my profile</a></li>
+        <li class='divider'></li>
+        <li><a class='orange-text' href='/profile/ballot'>my ballot</a></li>
+      </ul>
+    <nav class='white'>
+      <div class='nav-wrapper'>
+        <a href='/' class='blue-text brand-logo'>slacktivism</a>
+        <ul id="nav-mobile" class="right">
+          <li><a class="dropdown-button blue-text" href="#!" data-activates="dropdown1">menu<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
       </div>
-      <div class='navbar-links'>
-        <a class='orange-text' href='/auth/signup'>signup</a>
-        <a class='orange-text' href='/auth/login'>login</a>
-        <a class='orange-text' href='/auth/logout'>logout</a>
-        <a class='orange-text' href='/profile'>profile</a>
-        <a class='orange-text' href='/profile/ballot'>my ballot</a>
-      </div>
+    </nav>
     </div>
+
     <div>
       <% include partials/alerts %>
       <%- body %>

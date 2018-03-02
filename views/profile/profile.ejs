@@ -46,7 +46,7 @@
   <h4 class='blue-text'>Upcoming Senate Bills</h4>
   <div class='left bill-scroller'>
   <% if (billsSen !== undefined) { %>
-    <% for (var i = 0; i < 10; i++) { %>
+    <% for (var i = 0; i < billsSen.length; i++) { %>
       <div class='repcard'>
         <div class="col s12 m6 l6">
           <div class="card white darken-1">
@@ -98,7 +98,7 @@
 <h4 class='blue-text'>Upcoming House Bills</h4>
   <div class='bill-scroller'>
   <% if (billsHouse !== undefined) {%>
-    <% for (var i = 0; i < 10; i++) { %>
+    <% for (var i = 0; i < billsHouse.length; i++) { %>
       <div class='repcard'>
         <div class="col s12 m6 l6">
           <div class="card white darken-1">

@@ -78,7 +78,7 @@ router.get('/ballots', isLoggedIn, function(req, res) {
 
 router.put('/ballots/:id', function(req, res) {
   db.ballot.update(
-    { vote: req.body.name },
+    { vote: req.body.vote },
     { where: { id: req.params.id }}
   ).then(function(ballot) {
     res.send('success');

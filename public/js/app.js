@@ -32,7 +32,7 @@ $(document).ready(function() {
       url: $(this).attr('href'),
       type: 'PUT',
       data: {
-        vote: $('name').val()
+        vote: $(this).attr('name')
       }
     }).done(function(data) {
       window.location.href = '/profile/ballots'

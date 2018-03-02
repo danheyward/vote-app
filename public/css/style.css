@@ -96,3 +96,7 @@ li {
 .block {
   display: block;
 }
+
+.image-slider {
+  height: 300px !important;
+}

@@ -1,13 +1,19 @@
-<form action='/auth/login' method='POST'>
-  <div class='input-field col s6 m4 l12'>
-    <label for='email'>Email</label>
-    <input id='email' class='validate center-align' type='email' name='email' value='danheyward@gmail.com'>
-  </div>
+<div id='modal1' class='modal modal-fixed-footer'>
+  <div>
+    <form action='/auth/login' method='POST'>
+      <div class='input-field col s6 m4 l12'>
+        <label for='email'>Email</label>
+        <input id='email' class='validate center-align' type='email' name='email' value='danheyward@gmail.com'>
+      </div>
 
-  <div class='input-field col s6 m4 l12'>
-    <label for='password'>Password</label>
-    <input id='password' class='validate center-align' type='password' name='password' value='password'>
-  </div>
+      <div class='input-field col s6 m4 l12'>
+        <label for='password'>Password</label>
+        <input id='password' class='validate center-align' type='password' name='password' value='password'>
+      </div>
 
-  <input class='btn btn-primary' type='submit'>
-</form>
+      <div class='modal-footer'>
+        <input class='btn btn-primary' type='submit'>
+      </div>
+    </form>
+  </div>
+</div>

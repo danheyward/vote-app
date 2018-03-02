@@ -43,31 +43,29 @@ router.get('/', isLoggedIn, function(req, res) {
   });
 });
 
-// router.post('/ballot/yes', isLoggedIn, function(req, res) {
-// // if (this bill is for the senate) {
-//   db.ballot.create({
-//     title: ,
-//     url: ,
-//     vote: ,
-//     sen1: ,
-//     sen2: ,
-//     rep: null,
-//     userId:
-//   }).then(function(vote) {
-//     res.redirect('/profile/ballot');
-//   }).catch(function(error) {
-//     console.log(error);
-//     res.render('/');
-//   });
-// // } else {
-// // if (this bill is for the house) {
-//   db.ballot.create({
-//     title: ,
-//     url: ,
-//     vote: ,
-//   })
-// }
-// }
-// });
+router.get('/ballot', isLoggedIn, function(req, res) {
+  res.send('You did it, buddy!');
+});
+
+router.post('/', isLoggedIn, function(req, res) {
+  console.log('hit the post, shitttt');
+  db.ballot.create({
+    title: req.body.title,
+    url: req.body.url,
+    vote: req.body.vote,
+    sen1: req.body.sen1,
+    sen1phone: req.body.sen1phone,
+    sen2: req.body.sen2,
+    sen2phone: req.body.sen2phone,
+    rep: req.body.rep,
+    repphone: req.body.repphone,
+    userId: req.user.id
+  }).then(function(ballot) {
+    res.redirect('/profile/ballot');
+  }).catch(function(error) {
+    console.log(error);
+    res.redirect('/');
+  });
+});
 
 module.exports = router;

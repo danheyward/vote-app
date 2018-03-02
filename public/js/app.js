@@ -26,4 +26,17 @@ $(document).ready(function() {
     });
   });
 
+  $(.delete-ballot).click(function(e) {
+    e.preventDefault();
+    $.ajax({
+      url: $(this).attr('href'),
+      type: 'PUT',
+      data: {
+        vote: $('name').val()
+      }
+    }).done(function(data) {
+      window.location.href = '/profile/ballots'
+    })
+  })
+
 });

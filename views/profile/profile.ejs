@@ -3,27 +3,31 @@
 <div class="carousel carousel-slider center" data-indicators="true">
   <div class="carousel-item blue white-text" href="#one!">
     <h2>This is <span style='text-decoration:underline'>YOUR</span> Senator!</h2>
-    <div class='headshot-wrapper'>
-      <div class='repheadshot' style="background-image:url('<%= reps.officials[2].photoUrl %>')"></div>
-    </div>
-    <div class='repinfo'>
-      <ul>
-        <li class='name'><%= reps.officials[2].name %></li>
-        <li class='party'><%= reps.officials[2].party %></li>
-        <li class='phone'><%= reps.officials[2].phones %></li>
-      </ul>
+    <div class='alignment-div'>
+      <div class='headshot-wrapper'>
+          <div class='repheadshot' style="background-image:url('<%= reps.officials[2].photoUrl %>')"></div>
+      </div>
+      <div class='repinfo'>
+        <ul>
+          <li class='name'><%= reps.officials[2].name %></li>
+          <li class='party'><%= reps.officials[2].party %></li>
+          <li class='phone'><%= reps.officials[2].phones %></li>
+          <a class='link white-text' href='<%= reps.officials[2].urls[0] %>' target='_blank'><li class='link'>More Info</li></a>
+        </ul>
+      </div>
     </div>
   </div>
   <div class="carousel-item blue white-text" href="#one!">
     <h2>This is <span style='text-decoration:underline'>YOUR</span> Senator!</h2>
     <div class='headshot-wrapper'>
-      <div class='repheadshot' style="background-image:url('<%= reps.officials[3].photoUrl %>')"></div>
+        <div class='repheadshot' style="background-image:url('<%= reps.officials[3].photoUrl %>')"></div>
     </div>
     <div class='repinfo'>
       <ul>
         <li class='name'><%= reps.officials[3].name %></li>
         <li class='party'><%= reps.officials[3].party %></li>
         <li class='phone'><%= reps.officials[3].phones %></li>
+        <a class='link white-text' href='<%= reps.officials[3].urls[0] %>' target='_blank'><li class='link'>More Info</li></a>
       </ul>
     </div>
   </div>
@@ -37,13 +41,14 @@
         <li class='name'><%= reps.officials[4].name %></li>
         <li class='party'><%= reps.officials[4].party %></li>
         <li class='phone'><%= reps.officials[4].phones %></li>
+        <a class='link white-text' href='<%= reps.officials[4].urls[0] %>' target='_blank'><li class='link'>More Info</li></a>
       </ul>
     </div>
   </div>
 </div>
 
 <div class='left bill-container'>
-  <h4 class='blue-text'>Upcoming Senate Bills</h4>
+  <h4 class='blue-text'>upcoming senate bills</h4>
   <div class='left bill-scroller'>
   <% if (billsSen !== undefined) { %>
     <% for (var i = 0; i < billsSen.length; i++) { %>
@@ -51,22 +56,23 @@
         <div class="col s12 m6 l6">
           <div class="card white darken-1">
             <div class="card-content blue-text">
-              <a href="<%= billsSen[i].bill_url %>" target='_blank'><i class='medium material-icons prefix'>work</i></a>
+              <a href="<%= billsSen[i].bill_url %>" target='_blank'><i class='medium material-icons prefix action'>work</i></a>
               <span class="card-title"><%= billsSen[i].bill_number %></span>
               <p><%= billsSen[i].description %></p>
             </div>
             <div class="card-action">
+              <h6 class='orange-text'>Cast Your Vote!</h6>
               <a class='vote' href="/profile/ballot" data-bill_number='<%= billsSen[i].bill_number %>'
                   data-description='<%= billsSen[i].description %>' data-vote='yes' data-rep1='<%= reps.officials[2].name %>'
                   data-rep1phone='<%= reps.officials[2].phones %>' data-rep2='<%= reps.officials[3].name %>'
                   data-rep2phone='<%= reps.officials[3].phones %>' data-rep3='null' data-rep3phone='null'>
-                  <i class='material-icons'>thumb_up</i>
+                  <i class='material-icons action'>thumb_up</i>
               </a>
               <a class='vote' href="/profile/ballot" data-bill_number='<%= billsHouse[i].bill_number %>'
                   data-description='<%= billsHouse[i].description %>' data-vote='no' data-rep1='<%= reps.officials[2].name %>'
                   data-rep1phone='<%= reps.officials[2].phones %>' data-rep2='<%= reps.officials[3].name %>'
                   data-rep2phone='<%= reps.officials[3].phones %>' data-rep3='null' data-rep3phone='null'>
-                  <i class='material-icons'>thumb_down</i>
+                  <i class='material-icons action'>thumb_down</i>
               </a>
             </div>
           </div>
@@ -79,7 +85,7 @@
         <div class="card white darken-1">
           <div class="card-content blue-text">
             <a href="https://www.congress.gov/search?q=%7B%22source%22%3A%22legislation%22%7D" target='_blank'>
-              <i class='medium material-icons prefix'>error</i>
+              <i class='medium material-icons prefix action'>error</i>
             </a>
             <span class="card-title">None found!</span>
             <p>Check back later for an updated list, or check the Congressional calendar below.</p>
@@ -95,7 +101,7 @@
 </div>
 
 <div class='right bill-container'>
-<h4 class='blue-text'>Upcoming House Bills</h4>
+<h4 class='blue-text'>upcoming house bills</h4>
   <div class='bill-scroller'>
   <% if (billsHouse !== undefined) {%>
     <% for (var i = 0; i < billsHouse.length; i++) { %>
@@ -103,22 +109,23 @@
         <div class="col s12 m6 l6">
           <div class="card white darken-1">
             <div class="card-content blue-text">
-              <a href="<%= billsHouse[i].bill_url %>" target='_blank'><i class='medium material-icons prefix'>work</i></a>
+              <a href="<%= billsHouse[i].bill_url %>" target='_blank'><i class='medium material-icons prefix action'>work</i></a>
               <span class="card-title"><%= billsHouse[i].bill_number %></span>
               <p><%= billsHouse[i].description %></p>
             </div>
             <div class="card-action">
+              <h6 class='orange-text'>Cast Your Vote!</h6>
               <a class='vote' href='#' data-bill_number='<%= billsHouse[i].bill_number %>'
                   data-description='<%= billsHouse[i].description %>' data-vote='yes' data-rep1='null'
                   data-rep1phone='null' data-rep2='null'data-rep2phone='null'
                   data-rep3='<%= reps.officials[4].name %>' data-rep3phone='<%= reps.officials[4].phones %>'>
-                  <i class='material-icons'>thumb_up</i>
+                  <i class='material-icons action'>thumb_up</i>
               </a>
               <a class='vote' href='#' data-bill_number='<%= billsHouse[i].bill_number %>'
                   data-description='<%= billsHouse[i].description %>' data-vote='no' data-rep1='null'
                   data-rep1phone='null' data-rep2='null'data-rep2phone='null'
                   data-rep3='<%= reps.officials[4].name %>' data-rep3phone='<%= reps.officials[4].phones %>'>
-                  <i class='material-icons'>thumb_down</i>
+                  <i class='material-icons action'>thumb_down</i>
               </a>
             </div>
           </div>
@@ -131,7 +138,7 @@
         <div class="card white darken-1">
           <div class="card-content blue-text">
             <a href="https://www.congress.gov/search?q=%7B%22source%22%3A%22legislation%22%7D" target='_blank'>
-              <i class='medium material-icons prefix'>error</i>
+              <i class='medium material-icons action'>error</i>
             </a>
             <span class="card-title">None found!</span>
             <p>Check back later for an updated list, or check the Congressional calendar below.</p>

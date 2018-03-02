@@ -1,5 +1,5 @@
 
-<h2>Your Ballots</h2>
+<h2 class='orange-text center-align'>your ballots</h2>
 <div class="row">
   <% ballot.forEach(function(ballot) { %>
     <div class="row">
@@ -47,6 +47,20 @@
         </div>
         </span><br/><br/>
         <hr>
+        <div class='inline centered'>
+          <a href='#'><i class="material-icons white-text medium block action">clear</i></a>
+          <small class='white-text block'>Shared My Voice</small>
+        </div>
+        <div class='inline centered'>
+          <a href='/profile/ballot/<%= ballot.id %>' class='delete-ballot'
+            <% if (ballot.vote === 'yes') { %>
+              name='no'
+            <% } else { %>
+              name='yes'
+            <% }; %>
+            ><i class="material-icons white-text medium block action">swap_horiz</i></a>
+          <small class='white-text block'>Changed My Mind</small>
+        </div>
       </div>
     </div>
   <% }); %>

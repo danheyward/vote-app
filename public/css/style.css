@@ -38,18 +38,11 @@ body {
   background-attachment: scroll;
   background-size: 100%;
   transition: opacity .25s;
-  vertical-align: middle;
 }
 
 .repinfo {
   display: inline-block;
-  vertical-align: middle:
 }
-
-/* .repheadshot:hover {
-  opacity: 0.5;
-  cursor: pointer;
-} */
 
 .headshot-wrapper {
   display: inline-block;
@@ -68,7 +61,7 @@ body {
   overflow: scroll;
 }
 
-i:hover {
+.action:hover {
   opacity: 0.5;
 }
 
@@ -82,6 +75,24 @@ li {
   margin: 5px 0px;
 }
 
+.link {
+  text-decoration: underline;
+}
+
 .name {
   font-size: 20px !important;
+}
+
+.inline {
+  display: inline-block !important;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.block {
+  display: block;
 }

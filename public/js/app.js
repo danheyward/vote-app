@@ -5,12 +5,12 @@ $(document).ready(function() {
   $('.slider').slider({full_width: true});
   $('.carousel.carousel-slider').carousel({fullWidth: true});
 
-  var options = [
-    {selector: '#why', offset: 0, callback: function(el) {
-      Materialize.showStaggeredDiv($(el));
-    } }
-  ];
-  Materialize.scrollFire(options);
+  // var options = [
+  //   {selector: '#why', offset: 0, callback: function(el) {
+  //     Materialize.showStaggeredDiv($(el));
+  //   } }
+  // ];
+  // Materialize.scrollFire(options);
 
 
   $('.vote').click(function(e) {

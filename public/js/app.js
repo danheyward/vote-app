@@ -3,10 +3,8 @@ $(document).ready(function() {
   $('.carousel').carousel({fullWidth: false});
   $('.slider').slider({full_width: true});
   $('.carousel.carousel-slider').carousel({fullWidth: false});
-  // $('.modal-trigger').leanModal();
 
   $('.vote').click(function(e) {
-    console.log('yo');
     e.preventDefault();
     var data = {
       title: $(this).attr('data-bill_number'),
@@ -24,7 +22,7 @@ $(document).ready(function() {
       type: 'POST',
       data: data
     }).done(function(data) {
-      window.location.href = '/profile/ballot';
+      window.location.href = '/profile/ballots';
     });
   });
 

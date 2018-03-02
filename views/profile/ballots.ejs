@@ -1,9 +1,15 @@
-<main class=''>
-  <div class="row">
+
+<h2>Your Ballots</h2>
+<div class="row">
   <% ballot.forEach(function(ballot) { %>
     <div class="row">
     <div class="col s12 m5">
-      <div class="card-panel blue">
+      <div class="card-panel blue center-align">
+        <% if (ballot.vote === 'yes') { %>
+          <i class="material-icons medium green-text">thumb_up</i>
+        <% } else { %>
+          <i class="material-icons medium red-text">thumb_down</i>
+        <% }; %>
         <h4 class='white-text center-align'><%= ballot.title %></h4>
         <div class='center-align'><small class='white-text'><%= ballot.url %></small></div><br/>
         <hr>
@@ -20,8 +26,8 @@
           </small><br/><br/>
         <% }; %>
         </div>
-
-        <span class="white-text">
+        <div class='blue-text white'><br/>
+        <span class="left-align">
           "Hello
           <% if (ballot.sen1 !== 'null') { %>
           Senator <%= ballot.sen1 %>/<%= ballot.sen2 %>,<br/><br/>
@@ -37,14 +43,12 @@
             <% } %>
           <%= ballot.title %>.<br/><br/>
           Thank you for taking your time to hear my voice."
+          <br/><br/>
+        </div>
         </span><br/><br/>
         <hr>
-
-
       </div>
     </div>
-
-
   <% }); %>
   </div>
 </main>

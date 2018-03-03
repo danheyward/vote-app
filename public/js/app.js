@@ -1,17 +1,9 @@
 $(document).ready(function() {
   $('select').material_select();
   $('.carousel').carousel({fullWidth: true});
-  $('.carousel').carousel('next', 5);
   $('.slider').slider({full_width: true});
   $('.carousel.carousel-slider').carousel({fullWidth: true});
-
-  // var options = [
-  //   {selector: '#why', offset: 0, callback: function(el) {
-  //     Materialize.showStaggeredDiv($(el));
-  //   } }
-  // ];
-  // Materialize.scrollFire(options);
-
+  $('.collapsible').collapsible();
 
   $('.vote').click(function(e) {
     e.preventDefault();

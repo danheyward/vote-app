@@ -9,31 +9,22 @@ body {
 }
 
 main {
-  padding-top: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.valign-wrapper {
+  display: inline-block;
 }
 
 .left-content, .right-content {
   display: inline-block;
-  vertical-align: middle;
-  margin: 40px 10px;
+  margin: 10px 10px;
 }
 
-.left-content {
-  height: 400px;
+.left-content, .right-content {
+  height: 300px;
   width: 400px;
-  background-color: gray;
-}
-
-.right-content {
-  height: 400px;
-  width: 400px;
-}
-
-.right-content-div {
-  height: 180px;
-  width: 400px;
-  background-color: lightblue;
-  margin: 5px 0px;
 }
 
 .navbar {
@@ -58,6 +49,10 @@ main {
 .navbar-links {
   text-align: right;
   display:inline-block;
+}
+
+form {
+  margin: 20px;
 }
 
 .input-field input:focus + label {

@@ -1,14 +1,16 @@
 <div class='navbar-fixed'>
   <ul id="dropdown1" class="dropdown-content">
-    <li><a class='orange-text' href='/auth/signup'>signup</a></li>
-    <li class='divider'></li>
-    <li><a class='orange-text modal-trigger' href='/auth/login'>login</a></li>
-    <li class='divider'></li>
-    <li><a class='orange-text' href='/profile'>my profile</a></li>
-    <li class='divider'></li>
-    <li><a class='orange-text' href='/profile/ballots'>my ballots</a></li>
-    <li class='divider'></li>
-    <li><a class='orange-text' href='/auth/logout'>logout</a></li>
+    <% if (currentUser === undefined) { %>
+      <li><a class='orange-text' href='/auth/signup'>signup</a></li>
+      <li class='divider'></li>
+      <li><a class='orange-text' href='/auth/login'>login</a></li>
+    <% } else { %>
+      <li><a class='orange-text' href='/profile'>my profile</a></li>
+      <li class='divider'></li>
+      <li><a class='orange-text' href='/profile/ballots'>my ballots</a></li>
+      <li class='divider'></li>
+      <li><a class='orange-text' href='/auth/logout'>logout</a></li>
+    <% } %>
   </ul>
 <nav class='white'>
   <div class='nav-wrapper'>

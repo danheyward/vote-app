@@ -3,6 +3,37 @@ body {
   padding: 0px;
   color: black;
   font-family: 'Noto Sans', sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  padding-top: 20px;
+}
+
+.left-content, .right-content {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 40px 10px;
+}
+
+.left-content {
+  height: 400px;
+  width: 400px;
+  background-color: gray;
+}
+
+.right-content {
+  height: 400px;
+  width: 400px;
+}
+
+.right-content-div {
+  height: 180px;
+  width: 400px;
+  background-color: lightblue;
+  margin: 5px 0px;
 }
 
 .navbar {
@@ -117,4 +148,17 @@ li {
 
 .image-slider {
   height: 300px !important;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: underline;
+}
+
+#footer-text {
+  text-align: center;
+}
+
+#copyright {
+  text-align: center;
 }

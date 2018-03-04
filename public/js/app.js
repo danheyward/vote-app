@@ -3,7 +3,6 @@ $(document).ready(function() {
   $('.carousel').carousel({fullWidth: true});
   $('.slider').slider({full_width: true});
   $('.carousel.carousel-slider').carousel({fullWidth: true});
-  $('.collapsible').collapsible();
 
   $('.vote').click(function(e) {
     e.preventDefault();

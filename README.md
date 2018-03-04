@@ -25,3 +25,9 @@ Test test test
   * Run `createdb express_auth_development` to create the development database
   * Run `createdb express_auth_test` to create the test database
   * Run `sequelize db:migrate` to run migrations
+
+
+Couch by Sergey Krivoy from the Noun Project
+Congress by MRFA from the Noun Project
+Google Civic Information API
+ProPublica Congress API

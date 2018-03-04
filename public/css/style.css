@@ -8,13 +8,30 @@ body {
   flex-direction: column;
 }
 
-main {
-  padding: 20px;
+.hero {
+  height: 400px;
+  width: auto;
   text-align: center;
 }
 
-.valign-wrapper {
+.hero-box {
+  height: 200px;
+  width: 600px;
   display: inline-block;
+}
+
+.hero-text {
+  text-align: left !important;
+}
+
+#slacktivism {
+  margin-top: 0px;
+  padding-top: 20px;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
 }
 
 .left-content, .right-content {

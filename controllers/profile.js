@@ -8,7 +8,8 @@ var router = express.Router();
 
 router.get('/', isLoggedIn, function(req, res) {
   db.user.findOne({
-    where: { email: req.user.email }
+    where: { email: req.user.email },
+    include: [db.ballot]
   }).then(function(address) {
     var url = 'https://www.googleapis.com/civicinfo/v2/representatives?key='
       + process.env.GOOGLE_KEY + '&address=' + address.dataValues.address + '%20' +
@@ -35,7 +36,8 @@ router.get('/', isLoggedIn, function(req, res) {
           res.render('profile/profile', {
             reps: reps,
             billsHouse: billsHouse.results[0].bills,
-            billsSen: billsSen.results[0].bills
+            billsSen: billsSen.results[0].bills,
+            ballots: address.ballots
           });
         });
       });

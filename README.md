@@ -126,5 +126,6 @@ Due to the constraints of this project (had to finish in a week), I wasn't able 
 There are some pretty amazing tools out there right now like [democracy.io](https://democracy.io/#!/) that I aspire this app to be one day. Here are a few directions I'd like to steer this project:
 
 1. Using better semantic summaries of the bills instead of the descriptions from the API. Would need this from the API.
-2. Adding in the original scope that I started out with. Full representative information and exhaustive contact portal, a list of their voting records and dates for their upcoming elections. Information on how best to get to the polls during said elections.
-3. Actively scaling up and deploying to the world.
+2. Improving the scripts section. Right now it is very simple but with integration from the first bullet, I could make it sound more conversational and less robotic.
+3. Adding in the original scope that I started out with. Full representative information and exhaustive contact portal, a list of their voting records and dates for their upcoming elections. Information on how best to get to the polls during said elections.
+4. Actively scaling up and deploying to the world.

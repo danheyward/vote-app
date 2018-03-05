@@ -41,7 +41,7 @@ Initially, the app (affectionately called Bots & Prayers at the time) was meant 
 
 ## Wireframes
 
-![wireframes1](public/img/wireframes1.jpg)
+![wireframes1](public/img/wireframes1.jpg?raw=true)
 ![wireframes2](public/img/wireframes2.jpg)
 
 

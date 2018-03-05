@@ -39,16 +39,10 @@ Initially, the app (affectionately called Bots & Prayers at the time) was meant 
 1. ) A young student, emblazoned by the latest school shootings, has felt that she didn't have an easy outlet for her voice. She wants a convenient portal to stay on the pulse and share her perspective while she anxiously waits for her 18th birthday.
 2. ) A middle aged professional, embarrassed that he has neglected his civic duties up until this point unlike his much more socially aware friends. He wants a quickly accessible guide to help educate himself on the issues present to his reps today.
 
-#### Finished version (see `brian-finished` branch)
+## Wireframes
 
-* Run `npm install` to install dependencies
-  * Use `npm run lint:js` to lint your JS
-  * Use `npm run lint:css` to lint your CSS
-  * Use `npm test` to run tests
-* Setup the databases
-  * Run `createdb express_auth_development` to create the development database
-  * Run `createdb express_auth_test` to create the test database
-  * Run `sequelize db:migrate` to run migrations
+![wireframes1]
+![wireframes2]
 
 
 Couch by Sergey Krivoy from the Noun Project

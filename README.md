@@ -54,3 +54,8 @@ For this rollout of the application, I utilized 2 simple models that honed in on
 | id | name   | email | password      | address | address2 | city   | state  | zipcode  | party  |
 |----|--------|-------|---------------|---------|----------|--------|--------|----------|--------|
 | 1  | STRING | EMAIL | BCRYPT STRING | STRING  | STRING   | STRING | STRING | STRING   | STRING |
+
+#### ballots
+| id | title   | url | vote      | sen1 | sen1phone | sen2   | sen2phone  | rep  | repphone | userid|
+|----|--------|-------|---------------|---------|----------|--------|--------|----------|--------|--------|
+| 1  | STRING | STRING | STRING | STRING  | STRING   | STRING | STRING | STRING   | STRING | STRING |

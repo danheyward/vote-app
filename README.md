@@ -16,7 +16,7 @@ In three simple steps, you can educate yourself on the issues our elected repres
 
 ***
 
-## The Tech
+## the tech
 * HTML5
 * CSS3
 * Materialize
@@ -29,22 +29,28 @@ In three simple steps, you can educate yourself on the issues our elected repres
 * Postgres
 * BCrypt
 * EJS
+* Google Civic Information API
+* ProPublica Congress API
 
-## The Plan
+## the plan
 
 Initially, the app (affectionately called Bots & Prayers at the time) was meant as a tool to help users find the quickest and most affective way to the polls. Unfortunately the polling data I was able to funnel from the Google Civic Information API was not as compelling as I had hoped. Afterwards, I pivoted to an app to track your representatives voting records integrated with a quick-fire way to email them directly. Again, the API didn't quite have what I needed. Luckily a friend helped me refactor to the current app.
 
-#### The Users
+#### the users
 
 1. ) A young student, emblazoned by the latest school shootings, has felt that she didn't have an easy outlet for her voice. She wants a convenient portal to stay on the pulse and share her perspective while she anxiously waits for her 18th birthday.
 2. ) A middle aged professional, embarrassed that he has neglected his civic duties up until this point unlike his much more socially aware friends. He wants a quickly accessible guide to help educate himself on the issues present to his reps today.
 
-## Wireframes
+## the wireframes
 
-![wireframes1](public/img/wireframes1.jpg?raw=true)
+![wireframes1](public/img/wireframes1.jpg)
 ![wireframes2](public/img/wireframes2.jpg)
 
+## the models
 
+For this rollout of the application, I utilized 2 simple models that honed in on the two aspects that are most important: the user and their opinions.
 
-Google Civic Information API
-ProPublica Congress API
+#### users
+| id | name   | email | password      | address | address2 | city   | state  | zipcode  | party  |
+|----|--------|-------|---------------|---------|----------|--------|--------|----------|--------|
+| 1  | STRING | EMAIL | BCRYPT STRING | STRING  | STRING   | STRING | STRING | STRING   | STRING |

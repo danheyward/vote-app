@@ -120,6 +120,8 @@ Due to the constraints of this project (had to finish in a week), I wasn't able 
 2. Adding typed.js or some other flashier jumbotron animation on the home page.
 3. Updating the color scheme (letting this marinate, I could just not like it because I've been staring at these colors for hours each day.)
 4. Adding in logic on the profile page to remove any bill from the API call that has already been saved to the user's ballot. I'm thinking a few nested for loops + if statements, we'll see...
+5. Removing ballots after a bill has been voted on + tracking said vote.
+6. Show how other users are voting.
 
 
 #### my wish list

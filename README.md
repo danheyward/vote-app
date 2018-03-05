@@ -10,9 +10,9 @@ the hesitant many into the world of social justice? That's where slacktivism the
 
 In three simple steps, you can educate yourself on the issues our elected representatives are facing each day and can easily share your voice with them! I mean, they are working for us, right?
 
-1. ) Sign up with your registered voting address.
-2. ) Vote on the upcoming bills that are being debated in Congress.
-3. ) CALL YOUR REP AND TELL THEM WHERE YOU STAND!
+1. Sign up with your registered voting address.
+2. Vote on the upcoming bills that are being debated in Congress.
+3. CALL YOUR REP AND TELL THEM WHERE YOU STAND!
 
 ***
 
@@ -29,8 +29,19 @@ In three simple steps, you can educate yourself on the issues our elected repres
 * Postgres
 * BCrypt
 * EJS
+
+***
+
+## the data
+
+I used two AMAZINGLY AWESOME APIs for this app and would highly recommend them to anyone else looking to build a social activist tool.
+
 * Google Civic Information API
 * ProPublica Congress API
+
+The Google Civic Information API gave me current senators and representatives based on the address I passed through from the user's profile. I could've kept going all the way to lower level state employees, but I wanted to stay focused on keeping the app simple and readable.
+
+The ProPublica Congress API gave me a list of all the active bills on the senate and house floors. Pretty cut and dry, there. The API has a wealth of information I didn't use, but I'll cover that later...
 
 ## the plan
 
@@ -38,13 +49,17 @@ Initially, the app (affectionately called Bots & Prayers at the time) was meant 
 
 #### the users
 
-1. ) A young student, emblazoned by the latest school shootings, has felt that she didn't have an easy outlet for her voice. She wants a convenient portal to stay on the pulse and share her perspective while she anxiously waits for her 18th birthday.
-2. ) A middle aged professional, embarrassed that he has neglected his civic duties up until this point unlike his much more socially aware friends. He wants a quickly accessible guide to help educate himself on the issues present to his reps today.
+1. A young student, emblazoned by the latest school shootings, has felt that she didn't have an easy outlet for her voice. She wants a convenient portal to stay on the pulse and share her perspective while she anxiously waits for her 18th birthday.
+2. A middle aged professional, embarrassed that he has neglected his civic duties up until this point unlike his much more socially aware friends. He wants a quickly accessible guide to help educate himself on the issues present to his reps today.
+
+***
 
 ## the wireframes
 
 ![wireframes1](https://raw.githubusercontent.com/danheyward/vote-app/master/public/img/wireframes1.jpeg)
 ![wireframes2](https://raw.githubusercontent.com/danheyward/vote-app/master/public/img/wireframes2.jpeg)
+
+***
 
 ## the models
 
@@ -59,3 +74,22 @@ For this rollout of the application, I utilized 2 simple models that honed in on
 | id | title   | url | vote      | sen1 | sen1phone | sen2   | sen2phone  | rep  | repphone | userid|
 |----|--------|-------|---------------|---------|----------|--------|--------|----------|--------|--------|
 | 1  | STRING | STRING | STRING | STRING  | STRING   | STRING | STRING | STRING   | STRING | STRING |
+
+***
+
+## the routes
+
+|crud|route|function|
+|---|---|---|
+|GET|'/'|Renders the home page.|
+|GET|'/signup'|Renders the signup page.|
+|POST|'/signup'|Creates a new user or finds an existing user. If new user is created, password is encrypted and user model is created. The user is redirected to the profile page. Any error redirects to the signup page.|
+|GET|'/login'|Renders the login page.|
+|POST|'/login'|Logs in user and redirects to the profile. Any error redirects to the login page.|
+|GET|'/logout'|Logs out user and redirects to the root.|
+|GET|'/profile'|Calls both APIs and renders the profile page with the ballots database included.|
+|
+|POST|'/profile'|Creates a new ballot record when a vote is placed on a bill that hasn't been voted on yet. Redirects to the ballots page. Any error redirects to the profile page.|
+|GET|'/profile/ballots'|Renders ballot page and includes the ballot models assigned to the logged in user.|
+|PUT|'profile/ballots/:id/edit'|Changes a selected model from yes to no, or vice versa.|
+|DELETE|'profile/ballots/:id'|Deletes model by id.|

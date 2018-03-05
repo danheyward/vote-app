@@ -75,7 +75,6 @@ router.get('/ballots', isLoggedIn, function(req, res) {
     include: [db.user]
   }).then(function(ballot) {
     res.render('profile/ballots', { ballot: ballot });
-    // res.send(ballot.length);
   });
 });
 

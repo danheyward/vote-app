@@ -88,8 +88,15 @@ For this rollout of the application, I utilized 2 simple models that honed in on
 |POST|'/login'|Logs in user and redirects to the profile. Any error redirects to the login page.|
 |GET|'/logout'|Logs out user and redirects to the root.|
 |GET|'/profile'|Calls both APIs and renders the profile page with the ballots database included.|
-|
 |POST|'/profile'|Creates a new ballot record when a vote is placed on a bill that hasn't been voted on yet. Redirects to the ballots page. Any error redirects to the profile page.|
 |GET|'/profile/ballots'|Renders ballot page and includes the ballot models assigned to the logged in user.|
 |PUT|'profile/ballots/:id/edit'|Changes a selected model from yes to no, or vice versa.|
 |DELETE|'profile/ballots/:id'|Deletes model by id.|
+
+## the site
+
+![homepage](https://raw.githubusercontent.com/danheyward/vote-app/master/public/img/home.png)
+![profile](https://raw.githubusercontent.com/danheyward/vote-app/master/public/img/profile.png)
+![ballots](https://raw.githubusercontent.com/danheyward/vote-app/master/public/img/ballots.png)
+![login](https://raw.githubusercontent.com/danheyward/vote-app/master/public/img/login.png)
+![signup](https://raw.githubusercontent.com/danheyward/vote-app/master/public/img/signup.png)

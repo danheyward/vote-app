@@ -43,8 +43,8 @@ Initially, the app (affectionately called Bots & Prayers at the time) was meant 
 
 ## the wireframes
 
-![wireframes1](public/img/wireframes1.jpg)
-![wireframes2](public/img/wireframes2.jpg)
+![wireframes1](https://raw.githubusercontent.com/danheyward/vote-app/master/public/img/wireframes1.jpeg)
+![wireframes2](https://raw.githubusercontent.com/danheyward/vote-app/master/public/img/wireframes2.jpeg)
 
 ## the models
 

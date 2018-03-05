@@ -41,11 +41,10 @@ Initially, the app (affectionately called Bots & Prayers at the time) was meant 
 
 ## Wireframes
 
-![wireframes1]
-![wireframes2]
+![wireframes1](/public/img/wireframes1.png)
+![wireframes2](/public/img/wireframes2.png)
 
 
-Couch by Sergey Krivoy from the Noun Project
-Congress by MRFA from the Noun Project
+
 Google Civic Information API
 ProPublica Congress API

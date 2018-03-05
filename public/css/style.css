@@ -9,24 +9,24 @@ body {
 }
 
 .hero {
-  height: 400px;
+  height: 300px;
   width: auto;
-  text-align: center;
 }
 
 .hero-box {
-  height: 200px;
-  width: 70%;
+  height: 300px;
+  width: 80%;
   display: inline-block;
-}
-
-.hero-text {
   text-align: left !important;
 }
 
 #slacktivism {
   margin-top: 0px;
-  padding-top: 20px;
+  padding-top: 0px;
+}
+
+.helper-padding {
+  padding-bottom: 20px;
 }
 
 main {
@@ -132,6 +132,17 @@ ul.dropdown-content.select-dropdown li span {
 .repcard, .norep {
   text-align: center;
   margin: 10px;
+}
+
+.empty-ballot {
+  padding: 20px;
+  margin: 10px;
+  font-size: 100px !important;
+}
+
+#empty-ballot-text {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 li {

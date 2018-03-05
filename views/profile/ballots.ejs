@@ -1,69 +1,75 @@
-
+<% if (ballot.length !== 0) { %>
 <h2 class='orange-text center-align'>your ballots</h2>
 <div class="row">
-  <% ballot.forEach(function(ballot) { %>
-    <div class="row">
-    <div class="col s12 m5">
-      <div class="card-panel blue center-align">
-        <% if (ballot.vote === 'yes') { %>
-          <i class="material-icons medium green-text lighten-2">thumb_up</i>
-        <% } else { %>
-          <i class="material-icons medium red-text lighten-2">thumb_down</i>
-        <% }; %>
-        <h4 class='white-text center-align'><%= ballot.title %></h4>
-        <div class='center-align'><small class='white-text'><%= ballot.url %></small></div><br/>
-        <hr>
-        <br>
-        <div class='center-align'><h5 class='white-text'>Your Script</h5>
-        <% if (ballot.sen1 !== 'null') { %>
-          <small class='white-text'>
-            Call Senator <%= ballot.sen1 %> at <%= ballot.sen1phone %>
-            or Senator <%= ballot.sen2 %> at <%= ballot.sen2phone %>
-          </small><br/><br/>
-          <% } else { %>
-          <small class='white-text'>
-            Call Representative <%= ballot.rep %> at <%= ballot.repphone %>
-          </small><br/><br/>
-        <% }; %>
-        </div>
-        <div class='blue-text white'><br/>
-        <span class="left-align">
-          "Hello
-          <% if (ballot.sen1 !== 'null') { %>
-          Senator <%= ballot.sen1 %>/<%= ballot.sen2 %>,<br/><br/>
-          <% } else {%>
-          Representative <%= ballot.rep %>,<br/><br/>
-          <% }; %>
-          My name is <%= ballot.user.name %> and, as a consituent from
-          <%= ballot.user.city %>, I ask that you vote
+    <% ballot.forEach(function(ballot) { %>
+      <div class="row">
+      <div class="col s12 m5">
+        <div class="card-panel blue center-align">
           <% if (ballot.vote === 'yes') { %>
-            in favor of
+            <i class="material-icons medium green-text lighten-2">thumb_up</i>
+          <% } else { %>
+            <i class="material-icons medium red-text lighten-2">thumb_down</i>
+          <% }; %>
+          <h4 class='white-text center-align'><%= ballot.title %></h4>
+          <div class='center-align'><small class='white-text'><%= ballot.url %></small></div><br/>
+          <hr>
+          <br>
+          <div class='center-align'><h5 class='white-text'>Your Script</h5>
+          <% if (ballot.sen1 !== 'null') { %>
+            <small class='white-text'>
+              Call Senator <%= ballot.sen1 %> at <%= ballot.sen1phone %>
+              or Senator <%= ballot.sen2 %> at <%= ballot.sen2phone %>
+            </small><br/><br/>
             <% } else { %>
-              against
-            <% } %>
-          <%= ballot.title %>.<br/><br/>
-          Thank you for taking your time to hear my voice."
-          <br/><br/>
-        </div>
-        </span><br/><br/>
-        <hr>
-        <div class='inline centered'>
-          <a href='/profile/ballots/<%= ballot.id %>' class='delete-ballot'><i class="material-icons white-text medium block action">clear</i></a>
-          <small class='white-text block'>Shared My Voice</small>
-        </div>
-        <div class='inline centered'>
-          <a href='/profile/ballots/<%= ballot.id %>/edit' class='edit-ballot'
-            <% if (ballot.vote === 'yes') { %>
-              name='no'
-            <% } else { %>
-              name='yes'
+            <small class='white-text'>
+              Call Representative <%= ballot.rep %> at <%= ballot.repphone %>
+            </small><br/><br/>
+          <% }; %>
+          </div>
+          <div class='blue-text white'><br/>
+          <span class="left-align">
+            "Hello
+            <% if (ballot.sen1 !== 'null') { %>
+            Senator <%= ballot.sen1 %>/<%= ballot.sen2 %>,<br/><br/>
+            <% } else {%>
+            Representative <%= ballot.rep %>,<br/><br/>
             <% }; %>
-            ><i class="material-icons white-text medium block action">swap_horiz</i></a>
-          <small class='white-text block'>Changed My Mind</small>
+            My name is <%= ballot.user.name %> and, as a consituent from
+            <%= ballot.user.city %>, I ask that you vote
+            <% if (ballot.vote === 'yes') { %>
+              in favor of
+              <% } else { %>
+                against
+              <% } %>
+            <%= ballot.title %>.<br/><br/>
+            Thank you for taking your time to hear my voice."
+            <br/><br/>
+          </div>
+          </span><br/><br/>
+          <hr>
+          <div class='inline centered'>
+            <a href='/profile/ballots/<%= ballot.id %>' class='delete-ballot'><i class="material-icons white-text medium block action">clear</i></a>
+            <small class='white-text block'>Shared My Voice</small>
+          </div>
+          <div class='inline centered'>
+            <a href='/profile/ballots/<%= ballot.id %>/edit' class='edit-ballot'
+              <% if (ballot.vote === 'yes') { %>
+                name='no'
+              <% } else { %>
+                name='yes'
+              <% }; %>
+              ><i class="material-icons white-text medium block action">swap_horiz</i></a>
+            <small class='white-text block'>Changed My Mind</small>
+          </div>
         </div>
       </div>
-    </div>
-  <% }); %>
+    <% }); %>
   </div>
-  <a href="/profile"><h4 class='orange-text center-align'>back to your profile</h2></a>
+  <a href="/profile"><h4 class='orange-text center-align'>back to your profile</h4></a>
+  <% } else { %>
+    <div class='center s12'>
+      <i class="material-icons orange-text block empty-ballot">phone_missed</i>
+      <a href="/profile"><h4 id='empty-ballot-text' class='orange-text center-align'>nothing here, go cast your votes!</h4></a>
+    </div>
+  <% }; %>
 </main>

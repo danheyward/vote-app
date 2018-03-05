@@ -93,10 +93,38 @@ For this rollout of the application, I utilized 2 simple models that honed in on
 |PUT|'profile/ballots/:id/edit'|Changes a selected model from yes to no, or vice versa.|
 |DELETE|'profile/ballots/:id'|Deletes model by id.|
 
+***
+
 ## the site
 
 ![homepage](https://raw.githubusercontent.com/danheyward/vote-app/master/public/img/home.png)
+***
 ![profile](https://raw.githubusercontent.com/danheyward/vote-app/master/public/img/profile.png)
+***
 ![ballots](https://raw.githubusercontent.com/danheyward/vote-app/master/public/img/ballots.png)
+***
 ![login](https://raw.githubusercontent.com/danheyward/vote-app/master/public/img/login.png)
+***
 ![signup](https://raw.githubusercontent.com/danheyward/vote-app/master/public/img/signup.png)
+
+***
+
+## the future (03.05.18)
+
+I'm proud of what I have right now but have lofty goals for its future. For this type of project, I'm definitely handcuffed to the data I can acquire, so I've sorted my goals into two categories: minor fixes and my wish list.
+
+#### minor fixes
+Due to the constraints of this project (had to finish in a week), I wasn't able to implement everything I had hoped. Here's a list of updates I plan on adding when I have some free time:
+
+1. Using the Materialize modals for the signup and login routes as opposed to their own page.
+2. Adding typed.js or some other flashier jumbotron animation on the home page.
+3. Updating the color scheme (letting this marinate, I could just not like it because I've been staring at these colors for hours each day.)
+4. Adding in logic on the profile page to remove any bill from the API call that has already been saved to the user's ballot. I'm thinking a few nested for loops + if statements, we'll see...
+
+
+#### my wish list
+There are some pretty amazing tools out there right now like [democracy.io](https://democracy.io/#!/) that I aspire this app to be one day. Here are a few directions I'd like to steer this project:
+
+1. Using better semantic summaries of the bills instead of the descriptions from the API. Would need this from the API.
+2. Adding in the original scope that I started out with. Full representative information and exhaustive contact portal, a list of their voting records and dates for their upcoming elections. Information on how best to get to the polls during said elections.
+3. Actively scaling up and deploying to the world.
